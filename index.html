@@ -5,43 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>歴史総合 一問一答（幕末〜近代）</title>
 <style>
-:root{--bg:#f6f5f1;--card:#fff;--tx:#1d1d1b;--sub:#6b6a64;--line:#dedbd2;--ac:#2f5d8a;--acbg:#e4edf6;--ok:#1f7a45;--okbg:#e0f3e8;--ng:#b3261e;--ngbg:#fbe5e3;
+:root{--bg:#fafaf8;--tx:#1a1a1a;--sub:#7a7972;--line:#e4e2db;--ink:#1a1a1a;--onink:#fff;--ok:#2e6b4a;--ng:#9c3a32;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#16181b;--card:#202327;--tx:#ececea;--sub:#a3a39d;--line:#34373c;--ac:#8db7e6;--acbg:#26394d;--ok:#6fd49a;--okbg:#1b3327;--ng:#ff8f86;--ngbg:#43201e}}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#16181b;--card:#202327;--tx:#ececea;--sub:#a3a39d;--line:#34373c;--ac:#8db7e6;--acbg:#26394d;--ok:#6fd49a;--okbg:#1b3327;--ng:#ff8f86;--ngbg:#43201e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#141414;--tx:#ececea;--sub:#8f8e88;--line:#2c2c2b;--ink:#ececea;--onink:#141414;--ok:#7cc59a;--ng:#e79a92}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#141414;--tx:#ececea;--sub:#8f8e88;--line:#2c2c2b;--ink:#ececea;--onink:#141414;--ok:#7cc59a;--ng:#e79a92}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.7 "Hiragino Sans","Yu Gothic",Meiryo,system-ui,sans-serif}
-main{max-width:680px;margin:0 auto;padding:16px}
-h1{font-size:1.3rem;margin:8px 0 4px}h2{font-size:1rem;margin:20px 0 8px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.7 "Hiragino Sans","Yu Gothic",Meiryo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:560px;margin:0 auto;padding:28px 20px 48px}
+h1{font-size:1.25rem;font-weight:700;margin:0 0 4px;letter-spacing:.02em}
 .sub{color:var(--sub);font-size:.85rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.seg button{flex:1;border:0;background:var(--card);color:var(--tx);padding:10px 14px;font:inherit;cursor:pointer}
-.seg button.on{background:var(--ac);color:#fff;font-weight:700}
-.sec{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
-.sec:last-child{border:0}.sec input{width:20px;height:20px;flex:none}
-.sec label{flex:1;cursor:pointer;min-width:0}
-.bar{height:6px;background:var(--line);border-radius:3px;margin-top:4px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--ok)}
-button.p{background:var(--ac);color:#fff;border:0;border-radius:12px;padding:14px 18px;font:inherit;font-weight:700;width:100%;cursor:pointer}
-button.p:disabled{opacity:.4;cursor:not-allowed}
-button.s{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer}
-button.sm{padding:6px 10px;font-size:.85rem}
-.q{font-size:1.15rem;line-height:1.9;margin:6px 0 14px}.q b{background:var(--acbg);color:var(--ac);padding:0 .4em;border-radius:6px}
-.ch{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 14px;background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:12px;font:inherit;cursor:pointer}
-.ch:hover:not(:disabled){border-color:var(--ac)}
-.ch.ok{background:var(--okbg);border-color:var(--ok);color:var(--ok);font-weight:700}
-.ch.ng{background:var(--ngbg);border-color:var(--ng);color:var(--ng)}
-input[type=text]{width:100%;padding:13px;font:inherit;font-size:1.1rem;border:2px solid var(--line);border-radius:12px;background:var(--card);color:var(--tx)}
-input[type=text]:focus{outline:0;border-color:var(--ac)}
-.fb{border-radius:12px;padding:12px 14px;margin:12px 0}.fb.ok{background:var(--okbg);color:var(--ok)}.fb.ng{background:var(--ngbg);color:var(--ng)}
-.fb .ex{color:var(--tx);font-size:.92rem;margin-top:6px}
-.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:6px}.prog i{display:block;height:100%;background:var(--ac)}
-.big{font-size:2.4rem;font-weight:800;text-align:center;margin:8px 0}
-.warn{background:var(--ngbg);color:var(--ng);padding:10px;border-radius:10px;font-size:.85rem}
-ul.w{padding-left:1.1em;margin:6px 0}
+.lbl{color:var(--sub);font-size:.8rem;margin:28px 0 8px}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;border:1px solid var(--line);background:transparent;color:var(--tx);padding:11px 0;font:inherit;border-radius:10px;cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--onink);border-color:var(--ink)}
+.sec{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.sec input{width:18px;height:18px;flex:none;accent-color:var(--ink)}
+.sec span:first-of-type{flex:1}.sec .n{color:var(--sub);font-size:.8rem;flex:none}
+.opt{display:flex;gap:10px;align-items:center;margin-top:22px;cursor:pointer}.opt input{width:18px;height:18px;accent-color:var(--ink)}
+button.p{display:block;width:100%;background:var(--ink);color:var(--onink);border:0;border-radius:12px;padding:15px;font:inherit;font-weight:700;cursor:pointer;margin-top:28px}
+button.p:disabled{opacity:.3;cursor:not-allowed}
+button.t{background:none;border:0;color:var(--sub);font:inherit;font-size:.85rem;cursor:pointer;padding:4px 0}
+.top{display:flex;justify-content:space-between;align-items:center}
+.prog{height:2px;background:var(--line);margin:10px 0 28px}.prog i{display:block;height:100%;background:var(--ink)}
+.q{font-size:1.2rem;line-height:2;margin:8px 0 24px}
+.bl{display:inline-block;min-width:4.5em;border-bottom:2px solid var(--tx);text-align:center;font-weight:700}
+.bl.ok{color:var(--ok);border-color:var(--ok)}.bl.ng{color:var(--ng);border-color:var(--ng)}
+.ch{display:block;width:100%;text-align:left;margin:0 0 10px;padding:14px 16px;background:transparent;color:var(--tx);border:1px solid var(--line);border-radius:12px;font:inherit;cursor:pointer}
+.ch:disabled{cursor:default}
+.ch:hover:not(:disabled){border-color:var(--tx)}
+.ch.ok{border-color:var(--ok);color:var(--ok);font-weight:700}
+.ch.ng{border-color:var(--ng);color:var(--ng)}
+input[type=text]{width:100%;padding:14px 16px;font:inherit;font-size:1.05rem;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--tx)}
+input[type=text]:focus{outline:0;border-color:var(--tx)}
+.fb{margin:22px 0 0;padding:2px 0 2px 14px;border-left:3px solid var(--ok)}.fb.ng{border-color:var(--ng)}
+.fb b.ok{color:var(--ok)}.fb b.ng{color:var(--ng)}
+.fb .ex{font-size:.9rem;color:var(--sub);margin-top:6px}
+.big{font-size:3rem;font-weight:700;margin:28px 0 0;line-height:1.2}
+.warn{color:var(--ng);font-size:.8rem;margin-top:12px}
+ul.w{padding-left:1.1em;margin:8px 0;font-size:.92rem}ul.w li{margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -82,7 +84,7 @@ const D=[
 ["1873年に公布され、土地所有者を確定して現金納の税制に改めた法令は＿＿である。","地租改正条例","地租改正"],
 ["地租改正で、土地所有者に発行された証書は＿＿である。","地券"],
 ["地租改正で、課税の基準とされたのは土地の価格すなわち＿＿である。","地価"],
-["地租改正で、土地所有者は地価の＿＿を地租として現金でおさめた（のち2.5％に引下げ）。","3%","3パーセント|三%|三パーセント"]]},
+["地租改正で、土地所有者は地価の＿＿を地租として現金でおさめた（のち2.5％に引下げ）。","3%","3パーセント|三%|三パーセント","2.5%|5%|10%"]]},
 {n:21,t:"富国強兵と文明開化",i:[
 ["経済力と軍事力の強化をめざした明治政府のスローガンは＿＿である。","富国強兵"],
 ["1872年、徴兵制の趣旨を国民に告げた文書は＿＿である。","徴兵告諭"],
@@ -161,7 +163,7 @@ const D=[
 ["薩長の出身者が要職をほぼ独占した政府を＿＿という。","藩閥政府"],
 ["第2回総選挙で、民党候補の当選を妨げるために政府がおこなった行為は＿＿である。","選挙干渉"]]},
 {n:25,t:"帝国主義と世界分割",i:[
-["電気・石油を動力源に、鉄鋼・機械・化学工業が成長した変化を＿＿という。","第2次産業革命","第二次産業革命|第２次産業革命"],
+["電気・石油を動力源に、鉄鋼・機械・化学工業が成長した変化を＿＿という。","第2次産業革命","第二次産業革命|第２次産業革命","第1次産業革命|第3次産業革命|第4次産業革命"],
 ["第2次産業革命でアメリカとともに成長し、イギリスの優位を脅かした国は＿＿である。","ドイツ"],
 ["アメリカとともに、鉄道建設事業が国家の領土拡大と一体だった国は＿＿である。","ロシア"],
 ["同種企業の連合で、とくにドイツで発達した独占資本の形態は＿＿である。","カルテル"],
@@ -175,7 +177,7 @@ const D=[
 ["1884〜85年、列強がアフリカ分割に合意し土地先占権を確認した会議は＿＿である。","ベルリン会議"],
 ["イギリスが金とダイヤモンドをめぐって勝利した戦争は＿＿である。","南アフリカ戦争","南ア戦争"],
 ["ケープ植民地の首相で、エジプトと南アフリカを電信線でつなぐ構想を示した人物は＿＿である。","セシル=ローズ","セシルローズ"],
-["1898年、アフリカでイギリスとフランスが衝突した事件は＿＿である。","ファショダ事件"],
+["1898年、アフリカでイギリスとフランスが衝突した事件は＿＿である。","ファショダ事件","ファショダ"],
 ["ドイツの進出に対抗して、1904年に英仏がむすんだ協定は＿＿である。","英仏協商"],
 ["20世紀初頭にアフリカで分割をまぬがれたのは、リベリアと＿＿である。","エチオピア"],
 ["20世紀初頭にアフリカで分割をまぬがれたのは、エチオピアと＿＿である。","リベリア"],
@@ -196,29 +198,83 @@ const D=[
 ["1894〜95年、朝鮮や清の領内を主戦場とした戦争は＿＿である。","日清戦争"],
 ["1895年に調印された日清戦争の講和条約は＿＿である。","下関条約"],
 ["下関条約で日本に割譲されたのは、台湾・澎湖諸島と＿＿である。","遼東半島"],
-["下関条約で清が日本に支払うことになった賠償金は＿＿である。","2億両","二億両"],
+["下関条約で清が日本に支払うことになった賠償金は＿＿である。","2億両","二億両","3000万両|1億両|5億両"],
 ["露・独・仏が日本に遼東半島の返還を要求した事件は＿＿である。","三国干渉"],
 ["日清戦争後、列強による＿＿が加速した。","中国分割"],
 ["日清戦後、藩閥政府に対抗して組織された政党は＿＿である。","憲政党"],
 ["1898年に誕生した日本初の政党内閣は＿＿である。","隈板内閣"],
 ["山県有朋内閣が、運動の取り締まりを強化するために制定した法律は＿＿である。","治安警察法"],
 ["山県有朋内閣が、軍部の権限を強化するために制定した制度は＿＿である。","軍部大臣現役武官制"],
-["伊藤博文が憲政党や官僚とともに結成した政党は＿＿である。","立憲政友会"]]}
+["伊藤博文が憲政党や官僚とともに結成した政党は＿＿である。","立憲政友会"]]},
+{n:27,t:"日露戦争から韓国併合へ",i:[
+["日清戦争後、中国分割の危機を感じて近代化の推進を主張した人物は＿＿らである。","康有為"],
+["戊戌の変法で、康有為らが動かして中央政府を変革しようとした清の皇帝は＿＿である。","光緒帝"],
+["1898年、保守派が変法を弾圧した事件は＿＿である。","戊戌の政変"],
+["戊戌の政変で、変法を弾圧した保守派の中心人物は＿＿である。","西太后"],
+["「扶清滅洋」を唱えて排外運動を展開した集団は＿＿である。","義和団"],
+["1900年、清が各国に宣戦布告し、8か国の連合軍が北京を占領した戦争は＿＿である。","義和団戦争","義和団事件|北清事変"],
+["1901年、義和団戦争の講和としてむすばれた取り決めは＿＿である。","北京議定書"],
+["1897年、高宗が皇帝を称して成立させた国は＿＿である。","大韓帝国","韓国"],
+["1902年、日本がロシアと対立していたイギリスとむすんだ同盟は＿＿である。","日英同盟"],
+["1904〜05年、満洲と韓国での優越権をめぐって日本とロシアがおこなった戦争は＿＿である。","日露戦争"],
+["日露戦争後、アメリカ大統領セオドア=ローズヴェルトの調停でむすばれた条約は＿＿である。","ポーツマス条約"],
+["1905年、韓国の外交権をうばって保護国化した協約は＿＿である。","第2次日韓協約","第二次日韓協約|第２次日韓協約"],
+["韓国保護国化の翌年、韓国に設置された日本の機関は＿＿である。","統監府"],
+["1907年、高宗が協約の不当性を国際世論に訴えようとした事件は＿＿である。","ハーグ密使事件"],
+["韓国で起こった反日武装闘争を＿＿という。","義兵運動"],
+["1909年、初代統監の伊藤博文を射殺した人物は＿＿である。","安重根"],
+["1910年、日本が韓国を植民地化したことを＿＿という。","韓国併合"],
+["韓国併合後、行政機関として設置された日本の機関は＿＿である。","朝鮮総督府"]]},
+{n:28,t:"日本の産業革命と社会問題",i:[
+["資本主義化・帝国主義化と並行して進んだ、日本の工業化を＿＿という。","産業革命"],
+["器械製糸の普及により、日本の最大の輸出品となったものは＿＿である。","生糸"],
+["綿織物業の回復とともに国内製造が活発になった原料の糸は＿＿である。","綿糸"],
+["日本が綿糸の輸出国に転換した背景は、大規模な＿＿工場の設立と機械化である。","紡績"],
+["1883年に開業した大阪紡績会社に出資した人物は＿＿である。","渋沢栄一"],
+["日清戦争の賠償金で、1897年に日本が移行した貨幣制度は＿＿である。","金本位制"],
+["日清戦争の賠償金の一部が設立に投じられた、重工業成長のきっかけとなった工場は＿＿である。","官営八幡製鉄所","八幡製鉄所"],
+["持株会社が多業種を多角的に経営した企業集団を＿＿という。","財閥"],
+["三井・住友・安田とともに四大財閥とされた財閥は＿＿である。","三菱"],
+["三井・三菱・住友とともに四大財閥とされた財閥は＿＿である。","安田"],
+["1889年に東京と神戸のあいだで開通した鉄道は＿＿である。","東海道線","東海道本線"],
+["1891年に上野〜青森間の鉄道を敷設した会社は＿＿である。","日本鉄道会社","日本鉄道"],
+["都市の低所得者層が集まって住む地域を＿＿という。","スラム"],
+["地主が耕作をせず、高額の小作料と作物の販売益を得る制度は＿＿である。","寄生地主制"],
+["日露戦争後に疲弊した農村の立てなおしをめざして、内務省が提唱した運動は＿＿である。","地方改良運動"],
+["天皇の名の下に国民の団結をうながした詔書は＿＿である。","戊申詔書"],
+["1901年に結成された日本初の社会主義政党は＿＿である。","社会民主党"],
+["1910年、明治天皇の暗殺を企てたとして24名に死刑判決が出た事件は＿＿である。","大逆事件"],
+["大逆事件後、社会主義の思想が抑圧された時代を「＿＿」という。","冬の時代"]]}
 ];
 /* ===== 処理 ===== */
 const ALL=[];
-D.forEach(s=>s.i.forEach((x,k)=>ALL.push({id:s.n+"-"+k,sec:s.n,t:s.t,q:x[0],a:x[1],alts:(x[2]||"").split("|").filter(Boolean)})));
+D.forEach(s=>s.i.forEach((x,k)=>ALL.push({id:s.n+"-"+k,sec:s.n,t:s.t,q:x[0],a:x[1],alts:(x[2]||"").split("|").filter(Boolean),ext:(x[3]||"").split("|").filter(Boolean)})));
 const BLANK="＿＿";
 function norm(s){return String(s).normalize("NFKC").toLowerCase().replace(/[\s・･=＝「」『』()（）、。]/g,"").replace(/[\u30a1-\u30f6]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));}
 function accepts(it,v){const n=norm(v);return n!==""&&[it.a,...it.alts].some(x=>norm(x)===n);}
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const PEOPLE=new Set("和宮 坂本龍馬 徳川慶喜 岩倉具視 大久保利通 大院君 西郷隆盛 閔妃 金玉均 大隈重信 前島密 植木枝盛 伊藤博文 ロエスレル 陸奥宗光 小村寿太郎 リヴィングストン スタンリー セシル=ローズ 康有為 光緒帝 西太后 安重根 渋沢栄一".split(" "));
+const OVR={"国会期成同盟":"org","アイヌ":"ethnic","マオリ":"ethnic","アボリジナル":"ethnic","ドイツ":"nation","ロシア":"nation","キューバ":"nation","エチオピア":"nation","リベリア":"nation","ハワイ":"nation","東京":"place","小笠原諸島":"place","遼東半島":"place","パナマ":"place","大韓帝国":"nation"};
+function kind(x){
+  const a=x.a;
+  if(OVR[a])return OVR[a];if(PEOPLE.has(a))return"person";
+  if(/^[\d第]/.test(a))return"num";
+  if(/(会議|事件|政変|戦争|軍乱|一揆|干渉|変|乱)$/.test(a))return"event";
+  if(/(条約|条規|協商|同盟)$/.test(a))return"treaty";
+  if(/(令|条例|法|勅語|勅諭|憲法|典範|書|誓文|掲示|告諭|憲按|制度|政策|処分|令)$/.test(a))return"law";
+  if(/(党|社|隊|内閣|使|議院|議会|館|場|府|兵)$/.test(a))return"org";
+  return"other";
+}
+const KIND=new Map();
+function kd(x){if(!KIND.has(x.id))KIND.set(x.id,kind(x));return KIND.get(x.id);}
 function makeChoices(it){
   const bad=new Set([it.a,...it.alts].map(norm));
-  const seen=new Set(bad),c=[];
+  const seen=new Set(bad),c=[],ke=kd(it);
+  const extra=it.ext.filter(v=>!seen.has(norm(v))).slice(0,3);extra.forEach(v=>seen.add(norm(v)));
   ALL.forEach(x=>{const n=norm(x.a);if(x.id===it.id||seen.has(n)||it.q.includes(x.a)||x.alts.some(y=>bad.has(norm(y))))return;seen.add(n);
-    const sc=(x.a.slice(-1)===it.a.slice(-1)?3:0)+(Math.abs(x.a.length-it.a.length)<=1?1:0)+(x.sec===it.sec?1:0)+Math.random()*1.5;c.push([sc,x.a]);});
+    const sc=(kd(x)===ke?10:0)+(x.a.slice(-1)===it.a.slice(-1)?2:0)+(Math.abs(x.a.length-it.a.length)<=1?1:0)+(x.sec===it.sec?2:0)+Math.random()*2;c.push([sc,x.a]);});
   c.sort((p,q)=>q[0]-p[0]);
-  return shuffle([it.a,...c.slice(0,3).map(p=>p[1])]);
+  return shuffle([it.a,...extra,...c.slice(0,3-extra.length).map(p=>p[1])]);
 }
 function validate(){
   const err=[],ids=new Set(),ans=new Map();
@@ -239,103 +295,88 @@ try{const r=JSON.parse(localStorage.getItem(KEY)||"null");if(r&&r.stats&&r.pref)
 function save(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 /* 状態 */
-let S={screen:"home",queue:[],i:0,score:0,answered:false,cur:null,choices:[],log:[],overridden:false,resetArm:false,note:""};
+let S={lock:0,screen:"home",queue:[],i:0,score:0,answered:false,cur:null,choices:[],log:[],note:""};
 const $=id=>document.getElementById(id);
 const app=$("app");
 function rec(id,ok){const s=store.stats[id]||{c:0,w:0,last:null};if(ok)s.c++;else s.w++;s.last=ok?1:0;store.stats[id]=s;save();}
 function pool(){return ALL.filter(x=>store.pref.sel.includes(x.sec)&&(!store.pref.onlyWrong||(store.stats[x.id]&&store.stats[x.id].last===0)));}
-function start(list){
+function start(list,all){
   if(!list.length)return;
-  const n=store.pref.count;S.queue=shuffle(list).slice(0,n>0?n:list.length);
+  const n=all?0:store.pref.count;S.queue=shuffle(list).slice(0,n>0?n:list.length);
   S.i=0;S.score=0;S.log=[];S.screen="quiz";loadQ();
 }
-function loadQ(){S.cur=S.queue[S.i];S.answered=false;S.overridden=false;S.choices=store.pref.mode==="choice"?makeChoices(S.cur):[];render();}
+function loadQ(){S.cur=S.queue[S.i];S.answered=false;S.lock=Date.now()+350;S.choices=store.pref.mode==="choice"?makeChoices(S.cur):[];render();}
 function judge(v){
-  if(S.answered)return;
-  const ok=accepts(S.cur,v);
-  S.answered=true;S.last={ok,v};if(ok)S.score++;
+  if(S.answered||Date.now()<S.lock)return;
+  const skip=v===null,ok=!skip&&accepts(S.cur,v);
+  S.answered=true;S.last={ok,v:skip?"":v,skip};if(ok)S.score++;
   S.log.push({it:S.cur,ok,v});rec(S.cur.id,ok);render();
-}
-function override(){
-  if(!S.answered||S.last.ok||S.overridden)return;
-  S.overridden=true;S.last.ok=true;S.score++;S.log[S.log.length-1].ok=true;
-  const s=store.stats[S.cur.id];s.w=Math.max(0,s.w-1);s.c++;s.last=1;save();render();
 }
 function next(){if(!S.answered)return;S.i++;if(S.i>=S.queue.length){S.screen="result";render();}else loadQ();}
 /* 描画 */
-function secBar(n){const l=ALL.filter(x=>x.sec===n);const m=l.filter(x=>store.stats[x.id]&&store.stats[x.id].last===1).length;return[m,l.length];}
 function home(){
   const p=store.pref,pl=pool();
-  let tot=0,mas=0;
-  const rows=D.map(s=>{const[m,n]=secBar(s.n);tot+=n;mas+=m;
-    return `<div class="sec"><input type="checkbox" id="c${s.n}" data-sec="${s.n}" ${p.sel.includes(s.n)?"checked":""}><label for="c${s.n}"><div>${s.n}節　${esc(s.t)}</div><div class="sub">習得 ${m} / ${n}問</div><div class="bar"><i style="width:${n?m/n*100:0}%"></i></div></label></div>`;}).join("");
+  const rows=D.map(s=>`<label class="sec"><input type="checkbox" data-sec="${s.n}" ${p.sel.includes(s.n)?"checked":""}><span>${s.n}　${esc(s.t)}</span><span class="n">${ALL.filter(x=>x.sec===s.n).length}問</span></label>`).join("");
   const wrongN=ALL.filter(x=>store.stats[x.id]&&store.stats[x.id].last===0).length;
   const bad=ERR.length?`<div class="warn">データ検査で ${ERR.length} 件の問題を検出: ${esc(ERR.slice(0,3).join(" / "))}</div>`:"";
-  app.innerHTML=`<h1>歴史総合 一問一答</h1><div class="sub">幕末〜日露戦争後（19〜28節）／全${tot}問・習得 ${mas}問</div>${bad}
-  <div class="card"><div class="sub">出題形式</div><div class="seg" style="margin:6px 0 14px"><button data-mode="choice" class="${p.mode==="choice"?"on":""}">4択</button><button data-mode="input" class="${p.mode==="input"?"on":""}">入力</button></div>
-  <div class="sub">問題数</div><div class="seg" style="margin:6px 0 14px">${[10,20,0].map(n=>`<button data-count="${n}" class="${p.count===n?"on":""}">${n?n+"問":"全部"}</button>`).join("")}</div>
-  <label class="row" style="cursor:pointer"><input type="checkbox" id="ow" ${p.onlyWrong?"checked":""} style="width:20px;height:20px"> 苦手だけ復習する（直近で間違えた ${wrongN}問）</label></div>
-  <div class="card"><div class="row" style="justify-content:space-between"><b>出題する節</b><span class="row"><button class="s sm" id="all">全選択</button><button class="s sm" id="none">全解除</button></span></div>${rows}</div>
-  <button class="p" id="go" ${pl.length?"":"disabled"}>${pl.length?`スタート（対象 ${pl.length}問）`:"対象の問題がありません"}</button>
-  <p class="sub" style="text-align:center"><button class="s sm" id="rs">${S.resetArm?"本当に消す？もう一度押すと削除":"学習記録をリセット"}</button></p>`;
+  app.innerHTML=`<h1>歴史総合 一問一答</h1><div class="sub">幕末〜日露戦争後（19〜28節）</div>${bad}
+  <div class="lbl">形式</div><div class="seg"><button data-mode="choice" class="${p.mode==="choice"?"on":""}">4択</button><button data-mode="input" class="${p.mode==="input"?"on":""}">入力</button></div>
+  <div class="lbl">問題数</div><div class="seg">${[10,20,0].map(n=>`<button data-count="${n}" class="${p.count===n?"on":""}">${n?n+"問":"全部"}</button>`).join("")}</div>
+  <div class="lbl">範囲</div>${rows}
+  <label class="opt"><input type="checkbox" id="ow" ${p.onlyWrong?"checked":""}><span>間違えた問題だけ（${wrongN}問）</span></label>
+  <button class="p" id="go" ${pl.length?"":"disabled"}>${pl.length?`はじめる（${pl.length}問から出題）`:"対象の問題がありません"}</button>`;
 }
 function quiz(){
   const it=S.cur,m=store.pref.mode,total=S.queue.length;
-  const q=esc(it.q).replace(BLANK,S.answered?`<b>${esc(it.a)}</b>`:"<b>　？　</b>");
+  const q=esc(it.q).replace(BLANK,S.answered?`<span class="bl ${S.last.ok?"ok":"ng"}">${esc(it.a)}</span>`:`<span class="bl">&nbsp;</span>`);
   let body="";
   if(m==="choice"){
     body=S.choices.map((c,k)=>{let cl="ch";if(S.answered){if(accepts(it,c))cl+=" ok";else if(!S.last.ok&&c===S.last.v)cl+=" ng";}
-      return `<button class="${cl}" data-ch="${k}" ${S.answered?"disabled":""}>${k+1}. ${esc(c)}</button>`;}).join("");
+      return `<button class="${cl}" data-ch="${k}" ${S.answered?"disabled":""}>${esc(c)}</button>`;}).join("");
   }else{
-    body=`<input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="漢字で入力（カタカナ/ひらがな不問）" ${S.answered?"disabled":""} value="${S.answered?esc(S.last.v):""}"><div style="margin-top:10px">${S.answered?"":`<button class="p" id="sub">答える</button>`}</div>`;
+    body=`<input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="答えを入力" ${S.answered?"disabled":""} value="${S.answered?esc(S.last.v):""}">${S.answered?"":`<button class="p" id="sub" style="margin-top:12px">答える</button>`}`;
   }
+  if(!S.answered)body+=`<div style="text-align:center;margin-top:14px"><button class="t" id="skip">わからない</button></div>`;
   let fb="";
   if(S.answered){
     const ok=S.last.ok;
-    fb=`<div class="fb ${ok?"ok":"ng"}"><b>${ok?(S.overridden?"正解にしました":"正解！"):"不正解　正解は「"+esc(it.a)+"」"}</b>${it.alts.length?`<div class="sub">別解：${esc(it.alts.join("、"))}</div>`:""}<div class="ex">${esc(it.q.replace(BLANK,it.a))}<br><span class="sub">（${it.sec}節 ${esc(it.t)}）</span></div></div>
-    <div class="row">${!ok&&m==="input"&&!S.overridden?`<button class="s" id="ov">表記ゆれなので正解にする</button>`:""}<button class="p" id="nx" style="flex:1">${S.i+1>=total?"結果を見る":"次へ"}</button></div>`;
+    fb=`<div class="fb ${ok?"":"ng"}"><b class="${ok?"ok":"ng"}">${ok?"正解":(S.last.skip?"わからない":"不正解")+"　正解は「"+esc(it.a)+"」"}</b><div class="ex">${esc(it.q.replace(BLANK,it.a))}（${it.sec}節 ${esc(it.t)}）</div></div>
+    <button class="p" id="nx">${S.i+1>=total?"結果を見る":"次へ"}</button>`;
   }
-  app.innerHTML=`<div class="row" style="justify-content:space-between"><span class="sub">${S.i+1} / ${total}　正解 ${S.score}</span><button class="s sm" id="quit">やめる</button></div>
+  app.innerHTML=`<div class="top"><span class="sub">${S.i+1} / ${total}</span><button class="t" id="quit">やめる</button></div>
   <div class="prog"><i style="width:${(S.i+(S.answered?1:0))/total*100}%"></i></div>
-  <div class="card"><div class="sub">${it.sec}節 ${esc(it.t)}</div><div class="q">${q}</div>${body}${fb}</div>`;
+  <div class="q">${q}</div>${body}${fb}`;
   if(S.answered){const n=$("nx");if(n)n.focus();}else if(m==="input"){const a=$("ans");if(a)a.focus();}
 }
 function result(){
   const n=S.log.length,ok=S.log.filter(x=>x.ok).length,ng=S.log.filter(x=>!x.ok);
-  app.innerHTML=`<h1>結果</h1><div class="card"><div class="big">${ok} / ${n}</div><div class="sub" style="text-align:center">正答率 ${n?Math.round(ok/n*100):0}%</div></div>
-  ${ng.length?`<div class="card"><b>間違えた問題</b><ul class="w">${ng.map(x=>`<li>${esc(x.it.q.replace(BLANK,"【"+x.it.a+"】"))}</li>`).join("")}</ul></div>`:`<div class="card">全問正解です！</div>`}
-  <div class="row">${ng.length?`<button class="p" id="rt" style="flex:1">間違えた問題だけもう一度</button>`:""}<button class="s" id="hm" style="flex:1;padding:14px">ホームへ</button></div>`;
+  app.innerHTML=`<h1>結果</h1><div class="big">${ok} / ${n}</div><div class="sub">正答率 ${n?Math.round(ok/n*100):0}%</div>
+  ${ng.length?`<div class="lbl">間違えた問題</div><ul class="w">${ng.map(x=>`<li>${esc(x.it.q.replace(BLANK,"【"+x.it.a+"】"))}</li>`).join("")}</ul>`:`<div class="lbl">全問正解です</div>`}
+  ${ng.length?`<button class="p" id="rt">間違えた問題をもう一度</button>`:""}<button class="p" id="hm" style="background:transparent;color:var(--tx);border:1px solid var(--line);margin-top:12px">ホームへ</button>`;
 }
-function render(){window.scrollTo(0,0);if(S.screen==="home")home();else if(S.screen==="quiz")quiz();else result();}
+function render(keep){const y=window.scrollY||0;window.scrollTo(0,keep?y:0);if(S.screen==="home")home();else if(S.screen==="quiz")quiz();else result();if(keep)window.scrollTo(0,y);}
 /* イベント（委譲） */
 app.addEventListener("click",e=>{
   const t=e.target.closest("button");
   if(!t)return;
   const d=t.dataset;
-  if(d.mode){store.pref.mode=d.mode;save();render();}
-  else if(d.count!==undefined){store.pref.count=+d.count;save();render();}
+  if(d.mode){store.pref.mode=d.mode;save();render(true);}
+  else if(d.count!==undefined){store.pref.count=+d.count;save();render(true);}
   else if(d.ch!==undefined){judge(S.choices[+d.ch]);}
-  else if(t.id==="go"){S.resetArm=false;start(pool());}
-  else if(t.id==="all"){store.pref.sel=D.map(s=>s.n);save();render();}
-  else if(t.id==="none"){store.pref.sel=[];save();render();}
-  else if(t.id==="rs"){if(S.resetArm){store.stats={};save();S.resetArm=false;}else S.resetArm=true;render();}
+  else if(t.id==="go"){start(pool());}
   else if(t.id==="sub"){const a=$("ans");if(a&&norm(a.value)!=="")judge(a.value);else if(a)a.focus();}
-  else if(t.id==="ov")override();
+  else if(t.id==="skip")judge(null);
   else if(t.id==="nx")next();
-  else if(t.id==="quit"||t.id==="hm"){S.screen="home";S.resetArm=false;render();}
-  else if(t.id==="rt"){start(S.log.filter(x=>!x.ok).map(x=>x.it));}
+  else if(t.id==="quit"||t.id==="hm"){S.screen="home";render();}
+  else if(t.id==="rt"){start(S.log.filter(x=>!x.ok).map(x=>x.it),true);}
 });
 app.addEventListener("change",e=>{
   const t=e.target;
-  if(t.dataset&&t.dataset.sec){const n=+t.dataset.sec,s=new Set(store.pref.sel);t.checked?s.add(n):s.delete(n);store.pref.sel=D.map(x=>x.n).filter(x=>s.has(x));save();render();}
-  else if(t.id==="ow"){store.pref.onlyWrong=t.checked;save();render();}
+  if(t.dataset&&t.dataset.sec){const n=+t.dataset.sec,s=new Set(store.pref.sel);t.checked?s.add(n):s.delete(n);store.pref.sel=D.map(x=>x.n).filter(x=>s.has(x));save();render(true);}
+  else if(t.id==="ow"){store.pref.onlyWrong=t.checked;save();render(true);}
 });
 app.addEventListener("keydown",e=>{
   if(e.target.id==="ans"&&e.key==="Enter"&&!e.isComposing&&e.keyCode!==229){e.preventDefault();if(norm(e.target.value)!=="")judge(e.target.value);}
-});
-document.addEventListener("keydown",e=>{
-  if(S.screen!=="quiz"||e.isComposing||e.target.tagName==="INPUT")return;
-  if(!S.answered&&store.pref.mode==="choice"&&/^[1-4]$/.test(e.key)){judge(S.choices[+e.key-1]);}
 });
 const ERR=validate();if(ERR.length)console.error(ERR);
 render();
